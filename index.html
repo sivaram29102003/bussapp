@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>TCS eTMS</title>
-
+    
+    <!-- PWA Meta Tags (Added) -->
     <meta name="theme-color" content="#2C125B">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="manifest" href="/manifest.json">
 
     <style>
         * {
@@ -13,74 +17,128 @@
             padding: 0;
             box-sizing: border-box;
         }
-
-        html, body {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background: #000;
+        
+        body {
+            background: #111827;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 15px;
         }
-
-        /* FULL SCREEN APP */
+        
+        .phone-container {
+            width: 360px;
+            height: 720px;
+            position: relative;
+            border: 14px solid #111827;
+            border-radius: 55px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.7);
+        }
+        
         .phone-screen {
             width: 100%;
-            height: 100vh;
-            height: 100dvh;
+            height: 100%;
+            background: linear-gradient(180deg, #2563eb 0%, #6d28d9 45%, #4c1d95 100%);
             position: relative;
-            overflow: hidden;
         }
-
-        /* FULL IMAGE FIT */
-      .screenshot {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("./exact.jpeg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-}
-        /* CLICK AREAS (unchanged logic) */
+        
+        .screenshot {
+            width: 100%;
+            height: 100%;
+            background: url('exact.jpeg') no-repeat center top;
+            background-size: cover;
+            position: absolute;
+            top: 30px;           
+            left: 0;
+            z-index: 1;
+        }
+        
+        /* Top fill */
+        .top-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background-color: #592bff;
+            z-index: 2;
+        }
+        
+        /* Bottom white bar */
+        .bottom-white {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 34px;
+            background: #f8fafc;
+            z-index: 2;
+        }
+        
+        /* Clickable overlay buttons */
         .overlay-btn {
             position: absolute;
-            z-index: 2;
             border-radius: 50px;
+            transition: all 0.15s ease;
+            z-index: 3;
         }
-
+        
+        .overlay-btn:active {
+            background: none;
+        }
+        
         .btn-bus {
             top: 25%;
-            left: 5%;
-            width: 90%;
+            left: 10%;
+            width: 89%;
             height: 86px;
         }
-
+        
         .btn-cab {
             top: 40%;
-            left: 5%;
-            width: 90%;
+            left: 10%;
+            width: 89%;
             height: 86px;
         }
-
+        
         .btn-geocode {
             top: 55%;
-            left: 5%;
-            width: 90%;
+            left: 10%;
+            width: 89%;
             height: 86px;
         }
     </style>
 </head>
-
 <body>
-
-    <div class="phone-screen">
-        <div class="screenshot"></div>
-
-        <div class="overlay-btn btn-bus" onclick="window.location.href='home.html'"></div>
-        <div class="overlay-btn btn-cab" onclick="window.location.href='home.html'"></div>
-        <div class="overlay-btn btn-geocode" onclick="window.location.href='home.html'"></div>
+    <div class="phone-container">
+        <div class="phone-screen">
+            <!-- Top fill -->
+            <div class="top-fill"></div>
+            
+            <!-- Screenshot -->
+            <div class="screenshot"></div>
+            
+            <!-- Bottom white bar -->
+            <div class="bottom-white"></div>
+            
+            <!-- Clickable Areas -->
+            <div class="overlay-btn btn-bus" onclick="window.location.href='home.html'"></div>
+            <div class="overlay-btn btn-cab" onclick="window.location.href='home.html'"></div>
+            <div class="overlay-btn btn-geocode" onclick="window.location.href='home.html'"></div>
+        </div>
     </div>
 
+    <script>
+        function selectService(service) {
+            alert(`✅ ${service} selected!`);
+        }
+
+        // PWA Service Worker (Added)
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js');
+        }
+    </script>
 </body>
 </html>

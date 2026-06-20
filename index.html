@@ -49,13 +49,24 @@
             background: url('exact.jpeg') no-repeat center top;
             background-size: cover;
             position: absolute;
-            top: 30px;           
+            top: 70px;           
             left: 0;
             z-index: 1;
         }
         
         /* Top fill */
-  
+        .top-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background-color: #592bff;
+            z-index: 2;
+        }
+        
+        /* Bottom white bar */
+     
         
         /* Clickable overlay buttons */
         .overlay-btn {
@@ -94,11 +105,13 @@
 <body>
     <div class="phone-container">
         <div class="phone-screen">
-           
+            <!-- Top fill -->
+            <div class="top-fill"></div>
             
             <!-- Screenshot -->
             <div class="screenshot"></div>
             
+           
             
             <!-- Clickable Areas -->
             <div class="overlay-btn btn-bus" onclick="window.location.href='home.html'"></div>

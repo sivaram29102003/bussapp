@@ -6,9 +6,6 @@
     <title>TCS eTMS</title>
 
     <meta name="theme-color" content="#2C125B">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="manifest" href="/manifest.json">
 
     <style>
         * {
@@ -17,80 +14,59 @@
             box-sizing: border-box;
         }
 
-        body {
-            background: #111827;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 15px;
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #000;
         }
 
-        /* ❌ REMOVED phone-container */
-
+        /* FULL SCREEN APP */
         .phone-screen {
-            width: 360px;
-            height: 720px;
+            width: 100%;
+            height: 100vh;
+            height: 100dvh;
             position: relative;
-            background: linear-gradient(180deg, #2563eb 0%, #6d28d9 45%, #4c1d95 100%);
             overflow: hidden;
         }
 
-        .screenshot {
-            width: 100%;
-            height: 100%;
-            background: url('exact.jpeg') no-repeat center top;
-            background-size: cover;
-            position: absolute;
-            top: 30px;
-            left: 0;
-            z-index: 1;
-        }
-
-        .top-fill {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 30px;
-            background-color: #592bff;
-            z-index: 2;
-        }
-
-        .bottom-white {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 34px;
-            background: #f8fafc;
-            z-index: 2;
-        }
-
+        /* FULL IMAGE FIT */
+      .screenshot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("./exact.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+        /* CLICK AREAS (unchanged logic) */
         .overlay-btn {
             position: absolute;
+            z-index: 2;
             border-radius: 50px;
-            z-index: 3;
         }
 
         .btn-bus {
             top: 25%;
-            left: 10%;
-            width: 89%;
+            left: 5%;
+            width: 90%;
             height: 86px;
         }
 
         .btn-cab {
             top: 40%;
-            left: 10%;
-            width: 89%;
+            left: 5%;
+            width: 90%;
             height: 86px;
         }
 
         .btn-geocode {
             top: 55%;
-            left: 10%;
-            width: 89%;
+            left: 5%;
+            width: 90%;
             height: 86px;
         }
     </style>
@@ -98,22 +74,13 @@
 
 <body>
 
-    <!-- ONLY wrapper kept -->
     <div class="phone-screen">
-        <div class="top-fill"></div>
         <div class="screenshot"></div>
-        <div class="bottom-white"></div>
 
         <div class="overlay-btn btn-bus" onclick="window.location.href='home.html'"></div>
         <div class="overlay-btn btn-cab" onclick="window.location.href='home.html'"></div>
         <div class="overlay-btn btn-geocode" onclick="window.location.href='home.html'"></div>
     </div>
-
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js');
-        }
-    </script>
 
 </body>
 </html>

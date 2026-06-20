@@ -43,16 +43,13 @@
             position: relative;
         }
         
-        .screenshot {
-            width: 100%;
-            height: 100%;
-            background: url('exact.jpeg') no-repeat center top;
-            background-size: cover;
-            position: absolute;
-            top: 40px;           
-            left: 0;
-            z-index: 1;
-        }
+       .screenshot {
+    position: absolute;
+    inset: 0;              /* replaces top/left/width/height */
+    background: url('exact.jpeg') no-repeat center top;
+    background-size: cover;
+    z-index: 1;
+}
         
   
         
@@ -97,7 +94,7 @@
     <div class="phone-container">
         <div class="phone-screen">
             <!-- Top fill -->
-            <div class="top-fill"></div>
+
             
             <!-- Screenshot -->
             <div class="screenshot"></div>

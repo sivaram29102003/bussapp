@@ -14,7 +14,7 @@
     html, body {
       width: 100%; height: 100%;
       overflow: hidden;
-      background: #f0f0f0;
+      background: #dfdfdf;
       font-family: 'Inter', sans-serif;
     }
 
@@ -23,7 +23,7 @@
       max-width: 430px;
       height: 100vh;
       margin: 0 auto;
-      background: #f2f2f7;
+      background: #ffffff;
       display: flex;
       flex-direction: column;
       overflow: hidden;
@@ -31,7 +31,7 @@
 
     /* HEADER - starts from very top */
     .header {
-      background: #2C125B;
+      background: #482d91;
       color: #fff;
       display: flex;
       align-items: center;
@@ -56,7 +56,7 @@
       border-radius: 2px;
     }
     .header-title {
-      font-size: 15px;
+      font-size: 18px;
       font-weight: 600;
       color: #fff;
     }
@@ -75,13 +75,13 @@
       color: #fff;
       flex-shrink: 0;
     }
-    .route-top { font-size: 16px; font-weight: 700; text-align: center; margin-bottom: 10px; }
-    .route-arrow { text-align: center; font-size: 22px; margin-bottom: 10px; }
+    .route-top { font-size: 18x; font-weight: 700; text-align: center; margin-bottom: 10px; }
+    .route-arrow { text-align: center; font-size: 25px; margin-bottom: 10px; }
     .route-bottom { font-size: 16px; font-weight: 700; text-align: center; margin-bottom: 14px; }
     .route-times {
       display: flex;
       justify-content: space-between;
-      font-size: 13px;
+      font-size: 17px;
       font-weight: 600;
       color: rgba(255,255,255,0.95);
     }
@@ -94,6 +94,7 @@
       padding: 0 14px 14px;
       -webkit-overflow-scrolling: touch;
       
+      
     }
     .scroll-area::-webkit-scrollbar { display: none; }
 
@@ -102,7 +103,7 @@
       background: #fff;
       border-radius: 0px;
       overflow: hidden;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     }
 
     .pass-header {
@@ -118,11 +119,12 @@
       height: 60px;
       flex-shrink: 0;
       z-index: 1;
+      
     }
     .pass-title {
-      font-size: 15px;
-      font-weight: 700;
-      color: #1a1a2e;
+      font-size: 20px;
+      font-weight: 600;
+      color: #313140;
       text-align: center;
       flex: 1;
       padding: 16px 10px;
@@ -136,8 +138,8 @@
     }
 
     /* doubled white space: 120px top and bottom */
-    .qr-top-space { height: 105px; }
-    .qr-bottom-space { height: 105px; }
+    .qr-top-space { height: 115px; }
+    .qr-bottom-space { height: 115px; }
 
   .qr-wrapper {
   display: flex;
@@ -175,13 +177,13 @@
     }
     .view-btn {
       width: 100%;
-      background: #2C125B;
+      background: #2A0F76;
       color: #fff;
       border: none;
       border-radius: 0;
-      padding: 16px;
-      font-size: 16px;
-      font-weight: 600;
+      padding: 14px;
+      font-size: 15px;
+      font-weight: 400;
       cursor: pointer;
       letter-spacing: 0.3px;
     }
@@ -199,20 +201,21 @@
       border-top: 1px solid #ececec;
     }
     .tcs-logo-text {
-      font-size: 30px;
-      font-weight: 900;
+      font-size: 40px;
+      font-weight: 600;
       color: #000;
       letter-spacing: -1px;
       font-style: italic;
     }
-    .tcs-divider-v { width: 1px; height: 28px; background: #999; }
+    
     .tcs-company {
-      font-size: 9px;
-      font-weight: 900;
+      font-size: 10px;
+      font-weight: 750;
       color: #000;
       line-height: 1.4;
       letter-spacing: 1px;
     }
+    
   </style>
 </head>
 <body>
@@ -279,8 +282,8 @@
     <!-- TCS FOOTER always at bottom -->
     <div class="tcs-footer">
       <span class="tcs-logo-text">tcs</span>
-      <div class="tcs-divider-v"></div>
-      <div class="tcs-company">TATA<br>CONSULTANCY<br>SERVICES</div>
+    
+      <div class="tcs-company"><span style="font-weight: 1500; font-size: 12px;">TATA</span><br>CONSULTANCY<br>SERVICES</div>
     </div>
 
   </div>
